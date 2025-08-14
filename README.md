@@ -103,34 +103,106 @@ A seguir, requisitos funcionais (RF) e não funcionais (RNF) inferidos do códig
 
 ```mermaid
 classDiagram
-	class Cliente {
-		- String nome
-		- String telefone
-		- String email
-		- int idCliente
-	}
-	class Veiculo {
-		- String marca
-		- String modelo
-		- int ano
-		- String placa
-	}
-	class Servico {
-		- String descricao
-		- double custo
-		- double tempoEstimadoEmHoras
-		- boolean concluido
-	}
-	class Agendamento {
-		- String dataHora
-		- Cliente cliente
-		- Veiculo veiculo
-		- String servicosAgendados
-		- String status
-	}
-	Agendamento --> Cliente
-	Agendamento --> Veiculo
-	%% Agendamento --> "1..*" Servico : servicosAgendados (futuro)
+    direction LR
+
+    package controller {
+        class MainApp{
+            +start(Stage): void
+            +main(String[]): void
+        }
+        class MainController{
+            +abrirTelaCadastrarCliente(): void
+            +abrirTelaCadastrarVeiculo(): void
+            +abrirTelaCadastrarServico(): void
+            +abrirTelaAgendarServico(): void
+        }
+        class AtendimentoController{
+            -cliente: Cliente
+            +initialize(): void
+            +handleCadastrarCliente(): void
+        }
+        class VeiculoController{
+            -veiculo: Veiculo
+            +handleCadastrarVeiculo(): void
+        }
+        class ServicoController{
+            -servico: Servico
+            +handleCadastrarServico(): void
+        }
+        class AgendamentoController{
+            -agendamento: Agendamento
+            +handleAgendarServico(): void
+        }
+    }
+
+    package model {
+        class Cliente {
+            -nome: String
+            -telefone: String
+            -email: String
+            -idCliente: int
+            +getNome(): String
+            +getTelefone(): String
+            +getEmail(): String
+            +getIdCliente(): int
+            +exibirDetalhesCliente(): void
+            +atualizarTelefone(novoTelefone): void
+        }
+        class Veiculo {
+            -marca: String
+            -modelo: String
+            -ano: int
+            -placa: String
+            +getMarca(): String
+            +getModelo(): String
+            +getAno(): int
+            +getPlaca(): String
+            +exibirInformacoesVeiculo(): void
+        }
+        class Servico {
+            -descricao: String
+            -custo: double
+            -tempoEstimadoEmHoras: double
+            -concluido: boolean
+            +getDescricao(): String
+            +getCusto(): double
+            +getTempoEstimadoEmHoras(): double
+            +isConcluido(): boolean
+            +mostrarDetalhesServico(): void
+            +marcarConcluido(): void
+        }
+        class Agendamento {
+            -dataHora: String
+            -cliente: Cliente
+            -veiculo: Veiculo
+            -servicosAgendados: String
+            -status: String
+            +getDataHora(): String
+            +getCliente(): Cliente
+            +getVeiculo(): Veiculo
+            +getServicosAgendados(): String
+            +getStatus(): String
+            +exibirAgendamentoCompleto(): void
+            +atualizarStatus(novoStatus): void
+        }
+    }
+
+    MainApp "1" o-- "1" MainController: carrega FXML
+    
+    MainController ..> AtendimentoController: abre
+    MainController ..> VeiculoController: abre
+    MainController ..> ServicoController: abre
+    MainController ..> AgendamentoController: abre
+    
+    AtendimentoController ..> Cliente: cria
+    AgendamentoController ..> Cliente: usa
+    AgendamentoController ..> Veiculo: usa
+    AgendamentoController ..> Servico: usa
+    AgendamentoController ..> Agendamento: usa
+    
+    Agendamento "1" *-- "1" Cliente: usa
+    Agendamento "1" *-- "1" Veiculo: usa
+    Agendamento "1" *-- "0..*" Servico: usa
 ```
 
 ---
