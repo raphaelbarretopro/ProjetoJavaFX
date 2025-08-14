@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Oficina Mecânica — JavaFX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sistema de Oficina Mecânica — JavaFX</h1>
+        <h2>Apresentação do Projeto</h2>
+        <p>Este projeto é um sistema desktop desenvolvido em JavaFX para gerenciar uma oficina mecânica, incluindo
+            cadastro de clientes, veículos, serviços e agendamentos. O objetivo é organizar informações, reduzir
+            retrabalho e dar visibilidade ao status dos atendimentos.</p>
+        <h3>Principais Funcionalidades</h3>
+        <ul>
+            <li>Cadastro e consulta de clientes, veículos, serviços e agendamentos</li>
+            <li>Atualização de dados e status</li>
+            <li>Interface amigável e separação entre lógica e apresentação</li>
+            <li>Executável em múltiplas plataformas (Java Runtime)</li>
+        </ul>
+        <h2>Arquivos do Projeto</h2>
+        <div class="file-list">
+            <ul>
+                <li><span class="folder">/</span>
+                    <ul>
+                        <li><a href="README.md" target="_blank">README.md</a></li>
+                        <li><a href="index.html" target="_blank">index.html</a></li>
+                        <li><a href="LICENSE" target="_blank">LICENSE</a></li>
+                        <li><a href="Projeto-JAVA.docx" target="_blank">Projeto-JAVA.docx</a></li>
+                    </ul>
+                </li>
+                <li><span class="folder">Blonson/</span>
+                    <ul>
+                        <li><a href="Blonson/build.fxbuild" target="_blank">build.fxbuild</a></li>
+                        <li><span class="folder">bin/</span>
+                            <ul>
+                                <li><span class="folder">controller/</span>
+                                    <ul>
+                                        <li><a href="Blonson/bin/controller/AgendamentoController.class"
+                                                target="_blank">AgendamentoController.class</a></li>
+                                        <li><a href="Blonson/bin/controller/AtendimentoController.class"
+                                                target="_blank">AtendimentoController.class</a></li>
+                                        <li><a href="Blonson/bin/controller/MainApp.class"
+                                                target="_blank">MainApp.class</a></li>
+                                        <li><a href="Blonson/bin/controller/MainController.class"
+                                                target="_blank">MainController.class</a></li>
+                                        <li><a href="Blonson/bin/controller/ServicoController.class"
+                                                target="_blank">ServicoController.class</a></li>
+                                        <li><a href="Blonson/bin/controller/VeiculoController.class"
+                                                target="_blank">VeiculoController.class</a></li>
+                                    </ul>
+                                </li>
+                                <li><span class="folder">model/</span>
+                                    <ul>
+                                        <li><a href="Blonson/bin/model/Agendamento.class"
+                                                target="_blank">Agendamento.class</a></li>
+                                        <li><a href="Blonson/bin/model/Cliente.class" target="_blank">Cliente.class</a>
+                                        </li>
+                                        <li><a href="Blonson/bin/model/Servico.class" target="_blank">Servico.class</a>
+                                        </li>
+                                        <li><a href="Blonson/bin/model/Veiculo.class" target="_blank">Veiculo.class</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><span class="folder">view/resources/</span>
+                                    <ul>
+                                        <li><a href="Blonson/bin/view/resources/agendamento.fxml"
+                                                target="_blank">agendamento.fxml</a></li>
+                                        <li><a href="Blonson/bin/view/resources/Atendimento.fxml"
+                                                target="_blank">Atendimento.fxml</a></li>
+                                        <li><a href="Blonson/bin/view/resources/main.fxml" target="_blank">main.fxml</a>
+                                        </li>
+                                        <li><a href="Blonson/bin/view/resources/servico.fxml"
+                                                target="_blank">servico.fxml</a></li>
+                                        <li><a href="Blonson/bin/view/resources/veiculo.fxml"
+                                                target="_blank">veiculo.fxml</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="Blonson/bin/module-info.class" target="_blank">module-info.class</a></li>
+                            </ul>
+                        </li>
+                        <li><span class="folder">src/</span>
+                            <ul>
+                                <li><span class="folder">controller/</span>
+                                    <ul>
+                                        <li><a href="Blonson/src/controller/AgendamentoController.java"
+                                                target="_blank">AgendamentoController.java</a></li>
+                                        <li><a href="Blonson/src/controller/AtendimentoController.java"
+                                                target="_blank">AtendimentoController.java</a></li>
+                                        <li><a href="Blonson/src/controller/MainApp.java"
+                                                target="_blank">MainApp.java</a></li>
+                                        <li><a href="Blonson/src/controller/MainController.java"
+                                                target="_blank">MainController.java</a></li>
+                                        <li><a href="Blonson/src/controller/ServicoController.java"
+                                                target="_blank">ServicoController.java</a></li>
+                                        <li><a href="Blonson/src/controller/VeiculoController.java"
+                                                target="_blank">VeiculoController.java</a></li>
+                                    </ul>
+                                </li>
+                                <li><span class="folder">model/</span>
+                                    <ul>
+                                        <li><a href="Blonson/src/model/Agendamento.java"
+                                                target="_blank">Agendamento.java</a></li>
+                                        <li><a href="Blonson/src/model/Cliente.java" target="_blank">Cliente.java</a>
+                                        </li>
+                                        <li><a href="Blonson/src/model/Servico.java" target="_blank">Servico.java</a>
+                                        </li>
+                                        <li><a href="Blonson/src/model/Veiculo.java" target="_blank">Veiculo.java</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><span class="folder">view/resources/</span>
+                                    <ul>
+                                        <li><a href="Blonson/src/view/resources/agendamento.fxml"
+                                                target="_blank">agendamento.fxml</a></li>
+                                        <li><a href="Blonson/src/view/resources/Atendimento.fxml"
+                                                target="_blank">Atendimento.fxml</a></li>
+                                        <li><a href="Blonson/src/view/resources/main.fxml" target="_blank">main.fxml</a>
+                                        </li>
+                                        <li><a href="Blonson/src/view/resources/servico.fxml"
+                                                target="_blank">servico.fxml</a></li>
+                                        <li><a href="Blonson/src/view/resources/veiculo.fxml"
+                                                target="_blank">veiculo.fxml</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="Blonson/src/module-info.java" target="_blank">module-info.java</a></li>
+                            </ul>
+                        </li>
+                        <li><span class="folder">.settings/</span>
+                            <ul>
+                                <li><a href="Blonson/.settings/org.eclipse.core.resources.prefs"
+                                        target="_blank">org.eclipse.core.resources.prefs</a></li>
+                                <li><a href="Blonson/.settings/org.eclipse.jdt.core.prefs"
+                                        target="_blank">org.eclipse.jdt.core.prefs</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="Blonson/.classpath" target="_blank">.classpath</a></li>
+                        <li><a href="Blonson/.project" target="_blank">.project</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <h2>Sobre o Projeto</h2>
+        <p>Consulte o <a href="README.md" target="_blank">README.md</a> para detalhes completos sobre requisitos,
+            modelagem, casos de uso e diagrama de classes.</p>
+        <hr>
+        <h2>2. Elicitação de Requisitos</h2>
+        <h3>2.1 Requisitos Funcionais (RF)</h3>
+        <ul>
+            <li><b>RF-01 — Gerenciar Cliente</b>
+                <ul>
+                    <li>RF-01.1: Cadastrar cliente com nome, telefone, email, idCliente.</li>
+                    <li>RF-01.2: Consultar dados de cliente.</li>
+                    <li>RF-01.3: Atualizar telefone/email de cliente.</li>
+                </ul>
+            </li>
+            <li><b>RF-02 — Gerenciar Veículo</b>
+                <ul>
+                    <li>RF-02.1: Cadastrar veículo com marca, modelo, ano, placa.</li>
+                    <li>RF-02.2: Consultar dados de veículo e exibir informações.</li>
+                </ul>
+            </li>
+            <li><b>RF-03 — Gerenciar Serviço</b>
+                <ul>
+                    <li>RF-03.1: Cadastrar serviço com descricao, custo, tempoEstimadoEmHoras e flag concluido.</li>
+                    <li>RF-03.2: Consultar detalhes de serviço e marcar como concluído.</li>
+                </ul>
+            </li>
+            <li><b>RF-04 — Gerenciar Agendamento</b>
+                <ul>
+                    <li>RF-04.1: Criar agendamento com dataHora, associando Cliente e Veiculo.</li>
+                    <li>RF-04.2: Registrar servicosAgendados (texto descritivo no escopo atual do código).</li>
+                    <li>RF-04.3: Atualizar status do agendamento.</li>
+                    <li>RF-04.4: Exibir agendamento completo.</li>
+                </ul>
+            </li>
+            <li><b>RF-05 — Navegação/Controle (UI JavaFX)</b>
+                <ul>
+                    <li>RF-05.1: Controladores de tela para operações de cadastro e consulta:
+                        <code>AgendamentoController</code>, <code>ServicoController</code>,
+                        <code>VeiculoController</code>, <code>MainController</code>.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="note">
+            <b>Nota:</b> O atributo <code>servicosAgendados</code> é <code>String</code> no código atual. Recomenda-se
+            evoluir para relação 1:N entre <code>Agendamento</code> e <code>Servico</code>.
+        </div>
+        <h3>2.2 Requisitos Não Funcionais (RNF)</h3>
+        <ul>
+            <li>RNF-01 Usabilidade: UI simples e consistente (JavaFX), com rotas/telas claras para cada cadastro.</li>
+            <li>RNF-02 Confiabilidade: getters e métodos de exibição presentes nas entidades para reduzir erros de
+                binding na UI.</li>
+            <li>RNF-03 Manutenibilidade: separação entre model (entidades) e controllers para a camada de apresentação.
+            </li>
+            <li>RNF-04 Desempenho: operações de cadastro/consulta devem ocorrer em tempo aceitável localmente.</li>
+            <li>RNF-05 Portabilidade: aplicação em Java, executável em múltiplas plataformas com Java Runtime
+                compatível.</li>
+        </ul>
+        <hr>
+        <h2>3. Validação dos Requisitos</h2>
+        <h3>3.1 Critérios de Aceitação (exemplos)</h3>
+        <ul>
+            <li>RF-01 (Cliente): Dado um cliente válido, quando salvo, então devo conseguir visualizar nome, telefone,
+                email e idCliente pelos getters. Ao atualizar telefone, o método dedicado deve refletir imediatamente o
+                novo valor.</li>
+            <li>RF-02 (Veículo): Dado um veículo cadastrado, quando consulto, então devo ver marca, modelo, ano e placa
+                corretamente.</li>
+            <li>RF-03 (Serviço): Ao marcar um serviço como concluído, o método <code>marcarConcluido()</code> deve
+                alterar o estado de <code>concluido</code> para <code>true</code>.</li>
+            <li>RF-04 (Agendamento): Ao criar um agendamento, deve haver associação válida a Cliente e Veiculo, possuir
+                dataHora, status inicial coerente e apresentar tudo em <code>exibirAgendamentoCompleto()</code>.</li>
+        </ul>
+        <h3>3.2 Casos de Teste de Alto Nível</h3>
+        <ul>
+            <li>CT-01: Criar Cliente → Ler com getters → Atualizar telefone → Confirmar mudança.</li>
+            <li>CT-02: Criar Veículo → Exibir informações.</li>
+            <li>CT-03: Criar Serviço → Mostrar detalhes → Marcar concluído → Verificar flag concluído.</li>
+            <li>CT-04: Criar Agendamento (Cliente + Veículo + dataHora + servicosAgendados) → Atualizar status → Exibir
+                agendamento completo.</li>
+        </ul>
+        <hr>
+        <h2>4. Abstração de Classes e Modelagem</h2>
+        <h3>4.1 Entidades de Domínio</h3>
+        <ul>
+            <li><b>Cliente</b>
+                <ul>
+                    <li><b>Atributos:</b> <code>nome:String</code>, <code>telefone:String</code>,
+                        <code>email:String</code>, <code>idCliente:int</code></li>
+                    <li><b>Responsabilidades:</b> disponibilizar dados por meio de getters, exibir detalhes e permitir
+                        atualização de telefone.</li>
+                </ul>
+            </li>
+            <li><b>Veiculo</b>
+                <ul>
+                    <li><b>Atributos:</b> <code>marca:String</code>, <code>modelo:String</code>, <code>ano:int</code>,
+                        <code>placa:String</code></li>
+                    <li><b>Responsabilidades:</b> getters para consulta e método para exibir informações de veículo.
+                    </li>
+                </ul>
+            </li>
+            <li><b>Servico</b>
+                <ul>
+                    <li><b>Atributos:</b> <code>descricao:String</code>, <code>custo:double</code>,
+                        <code>tempoEstimadoEmHoras:double</code>, <code>concluido:boolean</code></li>
+                    <li><b>Responsabilidades:</b> getters/visualização de detalhes e alteração do estado para concluído.
+                    </li>
+                </ul>
+            </li>
+            <li><b>Agendamento</b>
+                <ul>
+                    <li><b>Atributos:</b> <code>dataHora:String</code>, <code>cliente:Cliente</code>,
+                        <code>veiculo:Veiculo</code>, <code>servicosAgendados:String</code>, <code>status:String</code>
+                    </li>
+                    <li><b>Responsabilidades:</b> consulta de dados (getters), exibição completa e atualização de
+                        status.</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>4.2 Controladores (camada de apresentação)</h3>
+        <p><code>AgendamentoController</code>, <code>ServicoController</code>, <code>VeiculoController</code>,
+            <code>MainController</code> — intermediam a interação UI→modelo, acionando operações de cadastro, consulta e
+            exibição.</p>
+        <h3>4.3 Relacionamentos</h3>
+        <ul>
+            <li><b>Agendamento → Cliente (associação):</b> um agendamento referencia exatamente um cliente.</li>
+            <li><b>Agendamento → Veiculo (associação):</b> um agendamento referencia exatamente um veículo.</li>
+            <li><b>Agendamento → Servico:</b> no código atual é apenas uma String descritiva
+                (<code>servicosAgendados</code>). Recomenda-se evoluir para coleção de <code>Servico</code> (1:N).</li>
+        </ul>
+        <hr>
+        <h2>5. Diagrama de Classes UML</h2>
+        <div class="uml">
+            <pre>
+Cliente        Veiculo         Servico         Agendamento
+--------       ---------       ---------       -------------
+nome           marca           descricao       dataHora
+telefone       modelo          custo           cliente
+email          ano             tempoEst.       veiculo
+idCliente      placa           concluido       servicosAgendados
+                                             status
+</pre>
+            <p><i>Relacionamentos:</i></p>
+            <ul>
+                <li>Agendamento → Cliente</li>
+                <li>Agendamento → Veiculo</li>
+                <li>Agendamento → Servico (futuro: 1:N)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

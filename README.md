@@ -212,9 +212,5 @@ classDiagram
 
 ---
 
-## Observações Finais
 
-- O projeto segue boas práticas de separação entre entidades de domínio e controladores de UI.
-- Recomenda-se evoluir o atributo `servicosAgendados` para uma coleção de objetos `Servico`.
-- O sistema é multiplataforma, bastando Java Runtime para execução.
 
