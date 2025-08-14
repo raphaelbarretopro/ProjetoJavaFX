@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Declara que este arquivo é XML e usa codificação UTF-8 -->
+
+<?import javafx.geometry.Insets?>   <!-- Importa a classe Insets (margens internas) -->
+<?import javafx.scene.control.*?>   <!-- Importa todos os controles JavaFX (Label, TextField, Button, TextArea) -->
+<?import javafx.scene.layout.*?>    <!-- Importa layouts (VBox, HBox) -->
+
+<!-- VBox = layout vertical, organiza elementos de cima para baixo -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="controller.VeiculoController" spacing="10">
+    <!-- fx:controller → vincula este layout à classe VeiculoController -->
+    <!-- spacing="10" → define 10px de espaço vertical entre os elementos -->
+
+    <padding>
+        <!-- Margens internas de 20px em todos os lados -->
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <!-- Título da tela em negrito -->
+    <Label text="Cadastro de Veículo" style="-fx-font-weight: bold;"/>
+
+    <!-- Linha horizontal para informar a marca do veículo -->
+    <HBox spacing="5">
+        <Label text="Marca:"/>
+        <TextField fx:id="marcaField" promptText="Ex: Ford"/>
+    </HBox>
+
+    <!-- Linha horizontal para informar o modelo do veículo -->
+    <HBox spacing="5">
+        <Label text="Modelo:"/>
+        <TextField fx:id="modeloField" promptText="Ex: Focus"/>
+    </HBox>
+
+    <!-- Linha horizontal para informar o ano do veículo -->
+    <HBox spacing="5">
+        <Label text="Ano:"/>
+        <TextField fx:id="anoField" promptText="Ex: 2020"/>
+    </HBox>
+
+    <!-- Linha horizontal para informar a placa do veículo -->
+    <HBox spacing="5">
+        <Label text="Placa:"/>
+        <TextField fx:id="placaField" promptText="Ex: ABC-1234"/>
+    </HBox>
+
+    <!-- Botão para cadastrar o veículo -->
+    <Button text="Cadastrar Veículo" onAction="#handleCadastrarVeiculo"/>
+    <!-- onAction → chama o método handleCadastrarVeiculo() no controller -->
+
+    <!-- Título da área de detalhes -->
+    <Label text="Detalhes do Veículo Cadastrado:" style="-fx-font-weight: bold;"/>
+
+    <!-- Área de texto somente leitura para exibir informações do veículo cadastrado -->
+    <TextArea fx:id="detalhesVeiculoArea" editable="false" prefHeight="100"/>
+    <!-- editable="false" → impede digitação pelo usuário -->
+    <!-- prefHeight="100" → altura preferida de 100px -->
+
+</VBox>

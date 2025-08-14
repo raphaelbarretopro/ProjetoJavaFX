@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Declara que o arquivo é XML e usa codificação UTF-8 -->
+
+<?import javafx.geometry.Insets?>   <!-- Importa a classe Insets (margens internas) -->
+<?import javafx.scene.control.*?>   <!-- Importa todos os controles JavaFX (Label, TextField, Button, TextArea, etc.) -->
+<?import javafx.scene.layout.*?>    <!-- Importa layouts (VBox, HBox, etc.) -->
+
+<!-- VBox = layout que organiza elementos na vertical -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="controller.AtendimentoController" spacing="10">
+    <!-- xmlns → define o namespace JavaFX -->
+    <!-- fx:controller → vincula este FXML à classe Java que vai controlar a lógica (AtendimentoController) -->
+    <!-- spacing="10" → define o espaço de 10px entre os elementos filhos -->
+
+   <padding>
+      <!-- Margem interna de 20px em todos os lados -->
+      <Insets top="20" right="20" bottom="20" left="20" />
+   </padding>
+
+   <!-- Título principal da tela -->
+   <Label text="Cadastro de Cliente" style="-fx-font-weight: bold;"/>
+
+   <!-- Primeira linha: Nome do Cliente -->
+   <HBox spacing="5">
+      <!-- HBox = layout horizontal para colocar o rótulo e o campo de texto lado a lado -->
+      <Label text="Nome:"/>
+      <TextField fx:id="nomeClienteField" promptText="Nome Completo"/>
+      <!-- fx:id → permite acessar este campo pelo controller -->
+      <!-- promptText → texto de dica exibido quando o campo está vazio -->
+   </HBox>
+
+   <!-- Segunda linha: Celular do Cliente -->
+   <HBox spacing="5">
+      <Label text="Celular:"/>
+      <TextField fx:id="telefoneClienteField" promptText="(99) 99999-9999"/>
+   </HBox>
+
+   <!-- Terceira linha: E-mail do Cliente -->
+   <HBox spacing="5">
+      <Label text="E-mail:"/>
+      <TextField fx:id="emailClienteField" promptText="Endereço de E-mail"/>
+   </HBox>
+
+   <!-- Botão para acionar o cadastro -->
+   <Button text="Cadastrar Cliente" onAction="#handleCadastrarCliente"/>
+   <!-- onAction → chama o método handleCadastrarCliente() no controller quando o botão for clicado -->
+
+   <!-- Título da área de detalhes -->
+   <Label text="Detalhes do Cliente Cadastrado:" style="-fx-font-weight: bold;"/>
+
+   <!-- Área de texto para exibir informações do cliente cadastrado -->
+   <TextArea fx:id="detalhesClienteArea" editable="false" prefHeight="100"/>
+   <!-- editable="false" → impede digitação, apenas exibe texto -->
+   <!-- prefHeight="100" → altura preferida de 100px -->
+
+</VBox>

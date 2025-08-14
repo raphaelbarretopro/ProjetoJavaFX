@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Declara que este é um arquivo XML com codificação UTF-8 -->
+
+<?import javafx.scene.*?>          <!-- Importa classes gerais da cena do JavaFX -->
+<?import java.lang.*?>             <!-- Importa classes básicas do Java -->
+<?import javafx.geometry.*?>       <!-- Importa classes de geometria (Insets, Pos, etc.) -->
+<?import javafx.geometry.Insets?>  <!-- Importa a classe Insets (margens internas) -->
+<?import javafx.scene.control.*?>  <!-- Importa controles da interface (Button, Label, TextField, etc.) -->
+<?import javafx.scene.layout.*?>   <!-- Importa layouts (VBox, HBox, etc.) -->
+
+<!-- VBox = layout vertical (organiza elementos de cima para baixo) -->
+<VBox spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgendamentoController">
+    <!-- spacing="10" define espaço de 10px entre os elementos -->
+    <!-- fx:controller indica qual classe Java vai controlar este layout -->
+
+    <padding>
+        <!-- Define margens internas do VBox -->
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <children>
+        <!-- Lista de elementos que estarão dentro do VBox -->
+
+        <!-- Luz ambiente para a cena, cor verde-limão (CHARTREUSE) -->
+        <AmbientLight color="CHARTREUSE" lightOn="true" />
+
+        <!-- Título em negrito -->
+        <Label style="-fx-font-weight: bold;" text="Agendar Serviço" />
+
+        <!-- Linha horizontal para campo "ID do Cliente" -->
+        <HBox spacing="5">
+            <children>
+                <!-- Texto fixo -->
+                <Label prefHeight="17.0" prefWidth="125.0" text="ID do Cliente:" />
+                <!-- Campo de texto para inserir o ID -->
+                <TextField fx:id="clienteIdField" prefHeight="25.0" prefWidth="171.0" promptText="ID do Cliente" />
+            </children>
+        </HBox>
+
+        <!-- Linha horizontal para campo "Placa do Veículo" -->
+        <HBox spacing="5">
+            <children>
+                <Label prefHeight="17.0" prefWidth="126.0" text="Placa do Veículo:" />
+                <TextField fx:id="veiculoPlacaField" prefHeight="25.0" prefWidth="171.0" promptText="Placa do Veículo" />
+            </children>
+        </HBox>
+
+        <!-- Linha horizontal para campo "Descrição do Serviço" -->
+        <HBox spacing="5">
+            <children>
+                <Label prefHeight="17.0" prefWidth="126.0" text="Descrição do Serviço:" />
+                <TextField fx:id="servicoDescricaoField" prefHeight="25.0" prefWidth="172.0" promptText="Descrição do Serviço" />
+            </children>
+        </HBox>
+
+        <!-- Linha horizontal para seleção da data do agendamento -->
+        <HBox spacing="5"> 
+            <children>
+                <Label text="Data do Agendamento:" />
+                <!-- Componente calendário -->
+                <DatePicker fx:id="dataAgendamentoPicker" />
+            </children>
+        </HBox>
+
+        <!-- Botão para enviar/agendar -->
+        <Button onAction="#handleAgendarServico" text="Agendar Serviço" />
+        <!-- onAction chama o método handleAgendarServico() no controller -->
+
+        <!-- Seção para exibir os detalhes -->
+        <Label style="-fx-font-weight: bold;" text="Detalhes do Agendamento:" />
+
+        <!-- Área de texto somente leitura -->
+        <TextArea fx:id="detalhesAgendamentoArea" editable="false" prefHeight="100" />
+
+    </children>
+</VBox>

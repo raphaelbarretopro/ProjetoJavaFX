@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Declara que o arquivo é XML com codificação UTF-8 -->
+
+<?import java.lang.*?>
+
+<!-- Importa classes básicas do Java -->
+
+<?import javafx.geometry.*?>
+
+<!-- Importa classes de geometria (Insets, Pos, etc.) -->
+
+<?import javafx.scene.control.*?>
+
+<!-- Importa controles do JavaFX (Button, Label, etc.) -->
+
+<?import javafx.scene.layout.*?>
+
+<!-- Importa layouts (VBox, HBox, etc.) -->
+
+<?import javafx.geometry.Insets?>
+
+<!-- Importa classe Insets (margens internas) -->
+
+<?import javafx.scene.control.Button?>
+
+<!-- Importa especificamente Button (opcional) -->
+
+<?import javafx.scene.control.Label?>
+
+<!-- Importa especificamente Label (opcional) -->
+
+<?import javafx.scene.layout.VBox?>
+
+<!-- Importa especificamente VBox (opcional) -->
+<!-- VBox = layout vertical, organiza os elementos de cima para baixo -->
+
+<VBox alignment="CENTER" spacing="15" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+    <!-- alignment="CENTER" → centraliza os elementos no VBox -->
+    <!-- spacing="15" → espaço de 15px entre cada elemento verticalmente -->
+    <!-- fx:controller → associa a classe MainController que vai controlar os eventos -->
+
+    <padding>
+        <!-- Margens internas de 20px em todos os lados -->
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <children>
+        <!-- Lista de elementos filhos do VBox -->
+
+        <!-- Título da aplicação -->
+        <Label style="-fx-font-size: 24; -fx-font-weight: bold;" text="Oficina Mecânica Os Blonson" />
+        <!-- -fx-font-size: 24 → aumenta o tamanho da fonte -->
+        <!-- -fx-font-weight: bold → deixa o texto em negrito -->
+
+        <!-- Botões de navegação -->
+        <Button onAction="#abrirTelaCadastrarCliente" prefWidth="200" text="Cadastrar Cliente" />
+        <!-- onAction → chama o método abrirTelaCadastrarCliente() no controller -->
+        <!-- prefWidth="200" → largura do botão = 200px -->
+
+        <Button onAction="#abrirTelaCadastrarVeiculo" prefWidth="200" text="Cadastrar Veículo" />
+        <Button onAction="#abrirTelaCadastrarServico" prefWidth="200" text="Cadastrar Serviço" />
+        <Button onAction="#abrirTelaAgendarServico" prefWidth="200" text="Agendar Serviço" />
+        <!-- Cada botão chama um método no controller para abrir a tela correspondente -->
+
+    </children>
+</VBox>

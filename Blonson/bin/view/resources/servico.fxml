@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Declara que o arquivo é XML com codificação UTF-8 -->
+
+<?import javafx.geometry.Insets?>   <!-- Importa a classe Insets para margens internas -->
+<?import javafx.scene.control.*?>   <!-- Importa todos os controles JavaFX (Label, TextField, Button, TextArea) -->
+<?import javafx.scene.layout.*?>    <!-- Importa layouts (VBox, HBox) -->
+
+<!-- VBox = layout vertical, organiza os elementos de cima para baixo -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="controller.ServicoController" spacing="10">
+    <!-- fx:controller → vincula esta tela à classe ServicoController -->
+    <!-- spacing="10" → define 10px de espaço vertical entre os elementos -->
+
+    <padding>
+        <!-- Margens internas de 20px em todos os lados -->
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <!-- Título da tela em negrito -->
+    <Label text="Cadastro de Serviço" style="-fx-font-weight: bold;"/>
+
+    <!-- Linha horizontal para a descrição do serviço -->
+    <HBox spacing="5">
+        <Label text="Descrição:"/>
+        <TextField fx:id="descricaoField" promptText="Ex: Troca de óleo"/>
+        <!-- fx:id → permite acessar o campo no controller -->
+        <!-- promptText → dica de preenchimento -->
+    </HBox>
+
+    <!-- Linha horizontal para o custo do serviço -->
+    <HBox spacing="5">
+        <Label text="Custo:"/>
+        <TextField fx:id="custoField" promptText="Ex: 150.00"/>
+    </HBox>
+
+    <!-- Linha horizontal para o tempo estimado do serviço -->
+    <HBox spacing="5">
+        <Label text="Tempo Estimado (h):"/>
+        <TextField fx:id="tempoEstimadoField" promptText="Ex: 2.5"/>
+    </HBox>
+
+    <!-- Botão para cadastrar o serviço -->
+    <Button text="Cadastrar Serviço" onAction="#handleCadastrarServico"/>
+    <!-- onAction → chama o método handleCadastrarServico() no controller quando clicado -->
+
+    <!-- Título da área de detalhes -->
+    <Label text="Detalhes do Serviço Cadastrado:" style="-fx-font-weight: bold;"/>
+
+    <!-- Área de texto somente leitura para exibir informações do serviço cadastrado -->
+    <TextArea fx:id="detalhesServicoArea" editable="false" prefHeight="100"/>
+    <!-- editable="false" → impede digitação -->
+    <!-- prefHeight="100" → altura preferida de 100px -->
+
+</VBox>
