@@ -105,86 +105,90 @@ A seguir, requisitos funcionais (RF) e não funcionais (RNF) inferidos do códig
 classDiagram
     direction LR
 
-    package controller {
-        class MainApp{
-            +start(Stage): void
-            +main(String[]): void
-        }
-        class MainController{
-            +abrirTelaCadastrarCliente(): void
-            +abrirTelaCadastrarVeiculo(): void
-            +abrirTelaCadastrarServico(): void
-            +abrirTelaAgendarServico(): void
-        }
-        class AtendimentoController{
-            -cliente: Cliente
-            +initialize(): void
-            +handleCadastrarCliente(): void
-        }
-        class VeiculoController{
-            -veiculo: Veiculo
-            +handleCadastrarVeiculo(): void
-        }
-        class ServicoController{
-            -servico: Servico
-            +handleCadastrarServico(): void
-        }
-        class AgendamentoController{
-            -agendamento: Agendamento
-            +handleAgendarServico(): void
-        }
+    class MainApp {
+        +start(Stage): void
+        +main(String[]): void
     }
 
-    package model {
-        class Cliente {
-            -nome: String
-            -telefone: String
-            -email: String
-            -idCliente: int
-            +getNome(): String
-            +getTelefone(): String
-            +getEmail(): String
-            +getIdCliente(): int
-            +exibirDetalhesCliente(): void
-            +atualizarTelefone(novoTelefone): void
-        }
-        class Veiculo {
-            -marca: String
-            -modelo: String
-            -ano: int
-            -placa: String
-            +getMarca(): String
-            +getModelo(): String
-            +getAno(): int
-            +getPlaca(): String
-            +exibirInformacoesVeiculo(): void
-        }
-        class Servico {
-            -descricao: String
-            -custo: double
-            -tempoEstimadoEmHoras: double
-            -concluido: boolean
-            +getDescricao(): String
-            +getCusto(): double
-            +getTempoEstimadoEmHoras(): double
-            +isConcluido(): boolean
-            +mostrarDetalhesServico(): void
-            +marcarConcluido(): void
-        }
-        class Agendamento {
-            -dataHora: String
-            -cliente: Cliente
-            -veiculo: Veiculo
-            -servicosAgendados: String
-            -status: String
-            +getDataHora(): String
-            +getCliente(): Cliente
-            +getVeiculo(): Veiculo
-            +getServicosAgendados(): String
-            +getStatus(): String
-            +exibirAgendamentoCompleto(): void
-            +atualizarStatus(novoStatus): void
-        }
+    class MainController {
+        +abrirTelaCadastrarCliente(): void
+        +abrirTelaCadastrarVeiculo(): void
+        +abrirTelaCadastrarServico(): void
+        +abrirTelaAgendarServico(): void
+    }
+
+    class AtendimentoController {
+        -cliente: Cliente
+        +initialize(): void
+        +handleCadastrarCliente(): void
+    }
+
+    class VeiculoController {
+        -veiculo: Veiculo
+        +handleCadastrarVeiculo(): void
+    }
+
+    class ServicoController {
+        -servico: Servico
+        +handleCadastrarServico(): void
+    }
+
+    class AgendamentoController {
+        -agendamento: Agendamento
+        +handleAgendarServico(): void
+    }
+
+    class Cliente {
+        -nome: String
+        -telefone: String
+        -email: String
+        -idCliente: int
+        +getNome(): String
+        +getTelefone(): String
+        +getEmail(): String
+        +getIdCliente(): int
+        +exibirDetalhesCliente(): void
+        +atualizarTelefone(novoTelefone): void
+    }
+
+    class Veiculo {
+        -marca: String
+        -modelo: String
+        -ano: int
+        -placa: String
+        +getMarca(): String
+        +getModelo(): String
+        +getAno(): int
+        +getPlaca(): String
+        +exibirInformacoesVeiculo(): void
+    }
+
+    class Servico {
+        -descricao: String
+        -custo: double
+        -tempoEstimadoEmHoras: double
+        -concluido: boolean
+        +getDescricao(): String
+        +getCusto(): double
+        +getTempoEstimadoEmHoras(): double
+        +isConcluido(): boolean
+        +mostrarDetalhesServico(): void
+        +marcarConcluido(): void
+    }
+
+    class Agendamento {
+        -dataHora: String
+        -cliente: Cliente
+        -veiculo: Veiculo
+        -servicosAgendados: String
+        -status: String
+        +getDataHora(): String
+        +getCliente(): Cliente
+        +getVeiculo(): Veiculo
+        +getServicosAgendados(): String
+        +getStatus(): String
+        +exibirAgendamentoCompleto(): void
+        +atualizarStatus(novoStatus): void
     }
 
     MainApp "1" o-- "1" MainController: carrega FXML
@@ -203,6 +207,7 @@ classDiagram
     Agendamento "1" *-- "1" Cliente: usa
     Agendamento "1" *-- "1" Veiculo: usa
     Agendamento "1" *-- "0..*" Servico: usa
+
 ```
 
 ---
